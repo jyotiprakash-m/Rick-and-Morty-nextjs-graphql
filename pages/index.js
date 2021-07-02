@@ -2,16 +2,15 @@
 import Head from "next/head";
 import { useState } from "react";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import styles from "../styles/Home.module.css";
 import DisplayCharecter from "../components/DisplayCharecter";
-import { message, Divider, Input, Space } from 'antd';
+import { Divider, Input, Space } from 'antd';
 const { Search } = Input;
 import { CloseSquareOutlined } from '@ant-design/icons';
-
 export default function Home(results) {
   const intialState = results;
   const [characters, setCharacters] = useState(intialState.characters);
   const [search, setSearch] = useState("")
+
   const onSearch = async (value) => {
     const client = new ApolloClient({
       uri: "https://rickandmortyapi.com/graphql/",
@@ -50,6 +49,10 @@ export default function Home(results) {
     setCharacters(data.characters.results);
 
   };
+
+  // Details of a charecter
+
+
 
   return (
     <div>
