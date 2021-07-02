@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Row, Col, Image, Card, Modal } from 'antd';
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import ImageNext from "next/image"
 import moment from 'moment';
 const { Meta } = Card;
 const DisplayDescription = (origin, live) => {
@@ -88,7 +89,9 @@ function DisplayCharecter({ characters }) {
                 title="Charecter Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <div className="imageBox">
 
-                    <img
+                    <Image
+                        className="imageDisplay"
+                        preview={false}
                         src={character.image}
                     />
                 </div>

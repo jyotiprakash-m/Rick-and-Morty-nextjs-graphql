@@ -31,8 +31,9 @@ a {
 
 .imageBox{
   text-align: center;
+  width: 100%;
 }
-.imageBox > img{
+.imageBox > .imageDisplay{
   width: 60%;
 }
 .appeance{
